@@ -2,6 +2,7 @@ import Page from "components/utility/Page";
 
 import { GetStaticProps, GetStaticPaths } from "next";
 import { allKebabTags, allTags } from "@/data/content/projects";
+import { Project } from "@/types";
 
 import projects from "@/data/content/projects";
 
@@ -12,13 +13,7 @@ import More from "components/projects/More";
 import Link from "next/link";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allTags = [];
-  projects.forEach((project) =>
-    project.tags.forEach((tag) => {
-      allTags.push(tag);
-    })
-  );
-  const uniqueAllTags = [...new Set(allTags)];
+  const uniqueAllTags = Array.from(new Set(projects.flatMap((project) => project.tags)));
   const allTagsPaths = uniqueAllTags.map((path) => ({
     params: { tag: `${kebabCase(path)}` },
   }));
@@ -28,8 +23,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({params}: {params: {tag: string}}) => {
-  const tag = params.tag;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const tag = String(params?.tag ?? "");
   const filteredProjects = projects.filter((project) =>
     [...kebabArray(project.tags)].includes(tag)
   );
@@ -43,7 +38,12 @@ export const getStaticProps: GetStaticProps = async ({params}: {params: {tag: st
   };
 };
 
-function PostPage({ filteredProjects, tag }) {
+type PostPageProps = {
+  filteredProjects: Project[];
+  tag: string;
+};
+
+function PostPage({ filteredProjects, tag }: PostPageProps) {
   const capsTag = allTags[allKebabTags.indexOf(tag)];
   return (
     <Page
@@ -57,7 +57,7 @@ function PostPage({ filteredProjects, tag }) {
       <Projects overwriteProjects={filteredProjects} />
 
       <Link href="/projects">
-        <div className="mt-8 max-w-sm md:max-w-2xl border border-fun-pink mx-auto text-center w-full whitespace-nowrap px-8 py-3 rounded-full text-fun-pink bg-fun-pink-darkerer hover:bg-fun-pink hover:text-white transition-colors cursor-pointer">
+        <div className="mt-8 max-w-sm md:max-w-2xl border border-fun-pink mx-auto text-center w-full whitespace-nowrap px-8 py-3 rounded-full text-fun-pink bg-fun-pink-darker hover:bg-fun-pink hover:text-white transition-colors cursor-pointer">
           View All
         </div>
       </Link>

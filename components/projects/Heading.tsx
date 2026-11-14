@@ -16,6 +16,7 @@ function Heading({ tag }: HeadingProps) {
             <img
               className="sqD w-8 sm:w-10 -top-6 -right-2 sm:-right-8 sm:-top-8 absolute"
               src="/static/doodles/hero/code.svg"
+              alt=""
             />
           </h1>
         </>
@@ -25,14 +26,14 @@ function Heading({ tag }: HeadingProps) {
           <img
             className="sqD w-10 -top-8 -right-8 absolute"
             src="/static/doodles/hero/code.svg"
+            alt=""
           />
         </h1>
       )}
       {!tag && (
         <p className="text-fun-gray text-xl sm:text-2xl max-w-3xl m-auto">
-          I've built cool apps and websites using anything from HTML to React
-          (and even PHP!). Here are some of my favorite projects over the course
-          of my journey.
+          Saya membangun aplikasi dan website dengan teknologi web modern.
+          Berikut beberapa project dan eksperimen yang sedang saya kembangkan.
         </p>
       )}
     </div>

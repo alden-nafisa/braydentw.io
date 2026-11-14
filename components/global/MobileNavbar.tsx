@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
+import type { SVGProps } from "react";
 
 import Link from "next/link";
-import {routes} from "@/data/global";
-import useDelayedRender from "use-delayed-render";
+import { routes } from "@/data/global";
 
 export default function MobileNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
-    isMenuOpen,
-    {
-      enterDelay: 20,
-      exitDelay: 300,
-    }
-  );
+  const isMenuMounted = isMenuOpen;
+  const isMenuRendered = isMenuOpen;
 
   function toggleMenu() {
     if (isMenuOpen) {
@@ -40,14 +35,18 @@ export default function MobileNavbar() {
           <Link href="/">
             <img
               className="mr-3"
-              src="/static/logos/logo_full.svg"
-              width="160"
+              src="/static/logos/icons8-gemini-64.png"
+              width={48}
+              height={48}
+              alt="Logo Alden Nafisa Hermawan"
             />
           </Link>
         </li>
         <button
           className="burger visible md:hidden"
-          aria-label="Toggle menu"
+          aria-label={isMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
           type="button"
           onClick={toggleMenu}
         >
@@ -57,12 +56,14 @@ export default function MobileNavbar() {
       </div>
       {isMenuMounted && (
         <ul
+          id="mobile-navigation"
           className={`menu flex flex-col absolute bg-bg
             ${isMenuRendered && "menuRendered"}`}
         >
           {routes.map((item, index) => {
             return (
               <li
+                key={item.path}
                 className="border-b border-gray-900 text-gray-100 text-sm font-semibold"
                 style={{ transitionDelay: `${150 + index * 25}ms` }}
               >
@@ -78,7 +79,7 @@ export default function MobileNavbar() {
   );
 }
 
-function MenuIcon(props) {
+function MenuIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       className="h-5 w-5 absolute text-gray-100"
@@ -106,7 +107,7 @@ function MenuIcon(props) {
   );
 }
 
-function CrossIcon(props) {
+function CrossIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       className="h-5 w-5 absolute text-gray-100"

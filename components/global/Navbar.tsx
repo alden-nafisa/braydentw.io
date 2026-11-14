@@ -2,7 +2,11 @@ import Link from "next/link";
 import React from "react";
 import { routes } from "@/data/global";
 
-function Navbar({ currentPage }) {
+type NavbarProps = {
+  currentPage: string;
+};
+
+function Navbar({ currentPage }: NavbarProps) {
   return (
     <nav className="flex items-center justify-between">
       <li className="list-none font-bold text-lg cursor-pointer">
@@ -10,10 +14,12 @@ function Navbar({ currentPage }) {
           <span className="font-black text-xl flex items-center">
             <img
               className="mr-2 transform hover:rotate-360 hover:scale-75 transition-transform duration-500"
-              src="/static/logos/logo_no_text.svg"
-              width="60"
+              src="/static/logos/icons8-gemini-64.png"
+              width={48}
+              height={48}
+              alt="Logo Alden Nafisa Hermawan"
             />
-            {"BraydenTW".split("").map((letter, index) => {
+            {"Alden Nafisa".split("").map((letter, index) => {
               return (
                 <span key={index} className="hover:text-fun-pink hover:-mt-2 transition-all duration-500 hover:duration-100 click:goodbyeLetterAnim">
                   {letter}

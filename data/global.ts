@@ -1,25 +1,25 @@
-type Route = {
-  title: string,
-  path: string
-}
+export type Route = {
+  title: string;
+  path: string;
+};
 
 type FooterCol = {
-  title: string,
+  title: string;
   links: {
-    name: string,
-    link: string,
-    icon?: string,
-    leavesWebsite: boolean
-  }[]
-}
+    name: string;
+    link: string;
+    icon?: string;
+    leavesWebsite: boolean;
+  }[];
+};
 
 type Footer = {
-  columns: FooterCol[]
+  columns: FooterCol[];
   support: {
-    buymeacoffee: string
-    paypal: string
-    message: string
-  }
+    buymeacoffee: string;
+    paypal: string;
+    message: string;
+  };
 };
 
 export const routes: Route[] = [
@@ -27,10 +27,6 @@ export const routes: Route[] = [
     title: "Home",
     path: "/",
   },
-  // {
-  //   title: "Blog",
-  //   path: "/blog",
-  // },
   {
     title: "Projects",
     path: "/projects",
@@ -52,11 +48,6 @@ export const footer: Footer = {
           link: "/",
           leavesWebsite: false,
         },
-        // {
-        //   name: "Blog",
-        //   link: "/blog",
-        //   leavesWebsite: false,
-        // },
         {
           name: "Projects",
           link: "/projects",
@@ -74,31 +65,31 @@ export const footer: Footer = {
       links: [
         {
           name: "GitHub",
-          link: "https://github.com/braydentw",
+          link: "https://github.com/alden-nafisa",
           icon: "/static/icons/github-f.svg",
           leavesWebsite: true,
         },
         {
           name: "LinkedIn",
-          link: "https://www.linkedin.com/in/braydentw/",
+          link: "https://www.linkedin.com/in/alden-nafisa-hermawan-a15a923b7",
           icon: "/static/icons/linkedin-f.svg",
           leavesWebsite: true,
         },
         {
-          name: "Dribbble",
-          link: "https://dribbble.com/braydentw",
+          name: "Instagram",
+          link: "https://www.instagram.com/aldenawn",
           icon: "/static/icons/dribbble-f.svg",
           leavesWebsite: true,
         },
         {
-          name: "IndieHackers",
-          link: "https://indiehackers.com/braydentw",
-          icon: "/static/icons/indiehackers-f.svg",
+          name: "YouTube",
+          link: "https://youtube.com/@sora-305",
+          icon: "/static/icons/external-link.svg",
           leavesWebsite: true,
         },
         {
           name: "Email",
-          link: "mailto:contact@braydentw.io",
+          link: "mailto:alkokoaldennafisahermawan@gmail.com",
           icon: "/static/icons/mail-f.svg",
           leavesWebsite: true,
         },
@@ -106,8 +97,8 @@ export const footer: Footer = {
     },
   ],
   support: {
-    buymeacoffee: "braydenw",
+    buymeacoffee: "",
     paypal: "",
-    message: "I appreciate your support very much! 💙",
+    message: "Terima kasih telah mengunjungi portfolio saya!",
   },
 };

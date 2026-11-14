@@ -2,31 +2,37 @@ import React from "react";
 import Image from "next/image";
 import { kebabCase } from "@/utils/utils";
 import Link from "next/link";
+import { Project } from "@/types";
 
-function ProjectCard({ project }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
     <div
-      className="max-w-sm mx-auto flex flex-col projects-center md:projects-start md:justify-center"
+      className="max-w-sm mx-auto flex flex-col items-center md:items-start md:justify-center"
       key={project.id}
     >
       <a
         href={project.link || project.github}
         target="_blank"
+        rel="noopener noreferrer"
         className={`w-full relative rounded-xl border-fun-gray border p-2 transition hover:-translate-y-2 hover:opacity-75 hover:border-fun-pink will-change-projectCard`}
       >
-        <img
+        <Image
           className="w-full rounded-md"
           src={project.img}
+          alt={`Preview project ${project.title}`}
+          width={640}
+          height={360}
+          objectFit="cover"
         />
       </a>
       <div className="w-full mt-5">
-        <div className="flex projects-center justify-between">
-          <a href={project.link || project.github} target="_blank">
+        <div className="flex items-center justify-between">
+          <a href={project.link || project.github} target="_blank" rel="noopener noreferrer">
             <h3 className="text-lg font-bold">{project.title}</h3>
           </a>
           <div className="space-x-2">
             {project.link && (
-              <a href={project.link} target="_blank" rel="noreferrer">
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
                 <Image
                   src="/static/icons/external-link.svg"
                   width={16}
@@ -36,7 +42,7 @@ function ProjectCard({ project }) {
               </a>
             )}
             {project.github && (
-              <a href={project.github} target="_blank" rel="noreferrer">
+              <a href={project.github} target="_blank" rel="noopener noreferrer">
                 <Image
                   src="/static/icons/github.svg"
                   width={16}

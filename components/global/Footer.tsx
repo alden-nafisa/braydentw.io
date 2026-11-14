@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="flex flex-col w-screen px-5 py-10 border-t border-fun-pink-darker z-5 bg-bg">
+    <footer className="flex flex-col w-screen px-5 py-10 border-t border-fun-pink-darker z-10 bg-bg">
       <div className="w-full max-w-4xl m-auto grid grid-cols-2 sm:grid-cols-3 justify-between items-start">
         {footer.columns.map((item, index) => {
           return (
@@ -21,6 +21,7 @@ function Footer() {
                         <a
                           href={item.link}
                           target="_blank"
+                          rel="noopener noreferrer"
                           className="items-center flex"
                         >
                           {item.icon && (
@@ -50,10 +51,14 @@ function Footer() {
                 <a
                   href={`https://buymeacoffee.com/${footer.support.buymeacoffee}`}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <img
+                  <Image
                     src="/static/misc/buy-me-a-coffee.svg"
+                    alt="Dukung pekerjaan Alden melalui Buy Me a Coffee"
                     className="h-12 mr-2 hover:opacity-80 opacity-100 transition-opacity"
+                    width={220}
+                    height={48}
                   />
                 </a>
               </div>
@@ -63,10 +68,14 @@ function Footer() {
                 <a
                   href={`https://paypal.me/${footer.support.paypal}`}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <img
+                  <Image
                     src="/static/misc/paypal.svg"
+                    alt="Dukung pekerjaan Alden melalui PayPal"
                     className="h-12 mr-2 hover:opacity-80 opacity-100 transition-opacity"
+                    width={220}
+                    height={48}
                   />
                 </a>
               </div>
@@ -78,7 +87,7 @@ function Footer() {
         </div>
       </div>
       <div className="max-w-4xl w-full m-auto mt-8 pt-8 sm:mt-4 sm:pt-4 text-center text-fun-gray border-t border-fun-pink-dark">
-        <p className="flex flex-col items-center justify-center ">
+        <div className="flex flex-col items-center justify-center">
           <div className="inline-flex items-center uppercase text-xs font-bold tracking-widest">
             Made with{" "}
             <div className="space-x-2 inline-flex items-center -mt-1 ml-3">
@@ -112,21 +121,21 @@ function Footer() {
           <div className="mt-2 text-xs ">
             Made by{" "}
             <a
-              href="mailto:contact@braydentw.io"
+              href="mailto:alkokoaldennafisahermawan@gmail.com"
               className="text-fun-gray-light font-medium"
             >
-              Brayden Wright
+              Alden Nafisa Hermawan
             </a>
             . All rights reserved.
           </div>
-        </p>
+        </div>
       </div>
       <div className="mt-8 text-center sm:text-right sm:-mt-12">
         <a
           className="w-auto inline-flex items-center sm:w-auto font-bold flex-shrink text-xs border border-fun-pink px-4 py-2 rounded-xl text-fun-pink cursor-pointer opacity-50"
-          href="https://github.com/braydentw/braydentw.io"
+          href="https://github.com/alden-nafisa"
           target="_blank"
-          rel="nooreferrer"
+          rel="noopener noreferrer"
         >
           <Image
             src="/static/icons/github.svg"

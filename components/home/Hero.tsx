@@ -8,15 +8,15 @@ function Hero() {
         className="relative heroElem w-full pt-20 pb-40 m-auto flex justify-center text-center flex-col items-center z-1"
         style={{ maxWidth: "1200px" }}
       >
-        <p className="text-xl mb-5">Hey, I'm Brayden.</p>
-        <h1 className="heroTitle inline-block max-w-2xl lg:max-w-4xl  w-auto relative text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-10 font-bold heroShinyBg">
-          I enjoy <span className="heroShiny1 text-fun-pink">building</span> and{" "}
-          <span className="heroShiny2 text-fun-pink">designing</span> for the
-          web.
+        <p className="text-xl mb-5">Halo, saya Alden.</p>
+        <h1 className="heroTitle inline-block max-w-2xl lg:max-w-4xl w-auto relative text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-10 font-bold heroShinyBg">
+          Saya membangun <span className="heroShiny1 text-fun-pink">produk digital</span> yang cepat dan{" "}
+          <span className="heroShiny2 text-fun-pink">bermakna</span>.
           <img
             className="sqD squiggle-hero-html w-16 top-[-90px] right-[5%] sm:top-[-90px] sm:right-[170px]"
             style={{ animationDelay: "0.1s" }}
             src="/static/doodles/hero/html.svg"
+            alt=""
           />
           <img
             className="sqD squiggle-hero-nextjs hidden top-[75px] right-0 w-11"
@@ -44,7 +44,7 @@ function Hero() {
             src="/static/doodles/hero/dino.svg"
           />
           <img
-            className="sqD right-[-60px] sm:right-0 bottom-[-180px] lg:[5%]"
+            className="sqD right-[-60px] sm:right-0 bottom-[-180px] lg:right-[5%]"
             style={{ animationDelay: "0.7s" }}
             src="/static/doodles/hero/paintbrush.svg"
           />
@@ -66,8 +66,8 @@ function Hero() {
           smooth={true}
           duration={500}
         >
-          <div className="cursor-pointer font-bold whitespace-nowrap px-10 py-4 text-fun-white border-2 text-xl rounded-full border-fun-white bg-bg hover:bg-fun-pink hover:text-white hover:border-fun-pink transition-colors">
-            Tell me more
+          <div className="cursor-pointer font-bold whitespace-nowrap px-10 py-4 text-white border-2 text-xl rounded-full border-white bg-bg hover:bg-fun-pink hover:text-white hover:border-fun-pink transition-colors">
+            Kenali saya
           </div>
         </ScrollLink>
       </div>

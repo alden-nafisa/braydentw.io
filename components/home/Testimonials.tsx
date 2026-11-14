@@ -18,11 +18,12 @@ function Testimonials() {
                   <img
                     className="sqD top-[-50px] left-0 bottom-auto right-auto md:bottom-[-50px] md:top-auto md:right-[-25px] md:left-auto w-20 z-[-100]"
                     src="/static/doodles/testimonials/yay.svg"
+                    alt=""
                   />
                 </>
               )}
               <p className="text-base italic relative testimonialQuote">
-                "{item.quote}"
+                &ldquo;{item.quote}&rdquo;
               </p>
               <p className="mt-4 text-xs text-fun-gray">
                 <b className="text-fun-pink font-monospace">{item.name}</b> -{" "}
@@ -32,6 +33,7 @@ function Testimonials() {
                 <img
                   className="sqD top-[-30px] right-[-15px] w-11"
                   src="/static/doodles/testimonials/squiggle2.svg"
+                  alt=""
                 />
               )}
             </div>
